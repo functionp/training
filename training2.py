@@ -10,6 +10,7 @@ class MyException(Exception):
     pass
 
 def get_average(a):
+    print("This is get_average")
     try:
         if len(a) == 0:
             raise MyException("list is empty.")
@@ -52,7 +53,7 @@ average = sum(a) / len(a)
 
 # 問題 2
 
-def get_varianace(a):
+def get_variance(a):
     try:
         if len(a) == 0:
             raise MyException("list is empty.")
@@ -82,18 +83,18 @@ aという変数名はパッと見なんなのかよくわからないので、
 
 '''
 
-'''
+
 # scoutyで実際に使っている get varianceはこちら。
-def get_variance(l):
+def get_variance1(l):
     average = get_average(l)
     return get_average([(e - average)**2 for e in l])
 
 # ちなみに上級レベルの質問ですが、
-def get_variance(l):
+def get_variance2(l):
     return get_average([(e - get_average(l))**2 for e in l])
 
 # と書かないのは何故かわかりますか？ （もちろん正常に動きます）
-'''
+
 
 # 問題 3
 
